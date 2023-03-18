@@ -1,0 +1,37 @@
+.item-box {
+  .item-box-myself {
+    justify-content: right;
+
+    .message-item-main {
+      flex-direction: row;
+
+      .message-container {
+        margin-right: 10px;
+
+        &::after {
+          border-bottom: none;
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .item-box-their {
+    justify-content: left;
+
+    .message-item-main {
+      flex-direction: row-reverse;
+
+      .message-container {
+        margin-left: 10px;
+
+        &::after {
+          border-top: none;
+          border-left: none;
+          right: 0;
+          left: -6px;
+        }
+      }
+    }
+  }
+}

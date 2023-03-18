@@ -1,11 +1,11 @@
 // import Update from '@/components/update'
-import { Button } from 'antd'
+import Main from '@/views/Main'
 
 function App() {
   return (
     <div className='App'>
       {/* <Update /> */}
-        <Button>123123456789</Button>
+        <Main />
     </div>
   )
 }

@@ -1,0 +1,5 @@
+$padding: 15px;
+.message-log {
+  height: calc(100% - $padding * 2);
+  padding: $padding;
+}
