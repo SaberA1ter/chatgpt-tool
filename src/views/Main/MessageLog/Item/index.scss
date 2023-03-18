@@ -4,6 +4,7 @@
 
     .message-item-main {
       flex-direction: row;
+      margin-left: 50px;
 
       .message-container {
         margin-right: 10px;
@@ -11,6 +12,7 @@
         &::after {
           border-bottom: none;
           border-right: none;
+          right: -7px;
         }
       }
     }
@@ -21,6 +23,7 @@
 
     .message-item-main {
       flex-direction: row-reverse;
+      margin-right: 50px;
 
       .message-container {
         margin-left: 10px;
@@ -28,8 +31,7 @@
         &::after {
           border-top: none;
           border-left: none;
-          right: 0;
-          left: -6px;
+          left: -7px;
         }
       }
     }
