@@ -1,4 +1,3 @@
-// import Update from '@/components/update'
 import Main from '@/views/Main'
 
 function App() {

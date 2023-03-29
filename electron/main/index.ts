@@ -1,7 +1,7 @@
 import { release } from 'node:os'
 import { join } from 'node:path'
 import { BrowserWindow, app, ipcMain, shell } from 'electron'
-import { update } from './update'
+import { chat } from './chat'
 
 // The built directory structure
 //
@@ -80,8 +80,7 @@ async function createWindow() {
     return { action: 'deny' }
   })
 
-  // Apply electron-updater
-  update(win)
+  chat(win)
 }
 
 app.whenReady().then(createWindow)
