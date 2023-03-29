@@ -27,7 +27,8 @@ export async function chat(win: Electron.BrowserWindow) {
       })
     }
     catch (error) {
-      const code = error.response.status
+      const code = error?.response?.status
+      console.log(error)
       return createFailMessage({ code })
     }
   })

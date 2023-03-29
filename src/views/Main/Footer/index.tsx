@@ -4,16 +4,16 @@ import { Button, Input } from 'antd'
 import './index.scss'
 
 interface FooterProps {
+  loading: boolean
   onSubmit(content: string): void
 }
 
 const { TextArea } = Input
 
 const Footer: FC<FooterProps> = (props) => {
-  const { onSubmit } = props
+  const { loading, onSubmit } = props
 
   const [value, setValue] = useState('')
-  const [loading, setLoading] = useState(false)
 
   const handleChange = (e: any) => {
     setValue(e.target.value)
@@ -24,7 +24,6 @@ const Footer: FC<FooterProps> = (props) => {
     e.stopPropagation()
     onSubmit(value)
     setValue('')
-    // setLoading(true)
   }
 
   return (

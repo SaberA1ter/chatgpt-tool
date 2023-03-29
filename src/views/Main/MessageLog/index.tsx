@@ -9,6 +9,7 @@ interface MessageLogProps {
 
 const MessageLog: FC<MessageLogProps> = (props) => {
   const { messages } = props
+
   return (
         <div className="message-log">
             {
