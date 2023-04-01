@@ -1,10 +1,9 @@
-import Main from '@/views/Main'
+import Chat from '@/views/Chat'
 
 function App() {
   return (
     <div className='App'>
-      {/* <Update /> */}
-        <Main />
+        <Chat />
     </div>
   )
 }

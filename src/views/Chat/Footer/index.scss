@@ -1,0 +1,14 @@
+$footerButtonWidth: 100px;
+.footer-container {
+  width: 100%;
+
+  .t-space-item {
+    &:last-child {
+      width: $footerButtonWidth;
+
+      .t-button {
+        width: 100%;
+      }
+    }
+  }
+}

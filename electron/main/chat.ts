@@ -1,13 +1,14 @@
-import {ipcMain} from 'electron'
-import {Configuration, OpenAIApi} from 'openai'
+import { ipcMain } from 'electron'
+import { Configuration, OpenAIApi } from 'openai'
 import HttpsProxyAgent from 'https-proxy-agent'
 import HttpProxyAgent from 'http-proxy-agent'
-import {createFailMessage, createSuccessMessage} from '../utils/message'
+import { createFailMessage, createSuccessMessage } from '../utils/message'
+import { md2Html } from '../utils/markdown'
 
 const httpsAgent = new HttpsProxyAgent('http://127.0.0.1:4780')
 const httpAgent = new HttpProxyAgent('http://127.0.0.1:4780')
 export async function chat(win: Electron.BrowserWindow) {
-  const apiKey = 'xxxx'
+  const apiKey = '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'
   const configuration = new Configuration({
     apiKey,
   })
@@ -29,7 +30,7 @@ export async function chat(win: Electron.BrowserWindow) {
         httpsAgent,
       })
       return createSuccessMessage({
-        message: res.data.choices[0].message.content,
+        message: md2Html(res.data.choices[0].message.content),
       })
     }
     catch (error) {

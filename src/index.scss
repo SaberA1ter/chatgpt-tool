@@ -7,3 +7,8 @@ html, body, #root, .App {
   margin: 0;
   padding: 0;
 }
+
+.hljs-pre {
+  border-radius: var(--td-radius-medium);
+  padding: var(--td-comp-paddingTB-l) var(--td-comp-paddingLR-xl);
+}

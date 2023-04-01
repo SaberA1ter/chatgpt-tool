@@ -1,7 +1,8 @@
-type MessageType = 'myself' | 'their'
+type MessageType = 'my' | 'their'
 export interface Message {
   type: MessageType
   content: string
-  time: number
+  // id 就是发送/收到时的时间戳
+  id: number
 }
-export type OriginMessage = Omit<Message, 'time'>
+export type OriginMessage = Omit<Message, 'id'>

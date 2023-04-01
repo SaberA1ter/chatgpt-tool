@@ -4,7 +4,7 @@ import hljs from 'highlight.js'
 const md = new MarkdownIt({
   highlight(str: string, lang: string) {
     try {
-      return `<pre class="hljs"><code>${
+      return `<pre class="hljs hljs-pre"><code>${
               hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
           }</code></pre>`
     }

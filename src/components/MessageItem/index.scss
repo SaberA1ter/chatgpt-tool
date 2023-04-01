@@ -1,0 +1,22 @@
+.message-item {
+  margin-bottom: 20px;
+  display: flex;
+
+  .t-space-item {
+    &:first-child {
+      max-width: calc(100% - var(--td-comp-size-m) - var(--td-comp-size-m) - var(--td-comp-size-m));
+    }
+    &:last-child {
+      width: var(--td-comp-size-m);
+    }
+  }
+
+  &-my {
+    justify-content: right;
+  }
+
+  &-their {
+    flex-direction: row-reverse;
+    justify-content: left;
+  }
+}

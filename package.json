@@ -23,11 +23,12 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "antd": "^5.3.1",
+    "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
     "highlight.js": "^11.7.0",
     "markdown-it": "^13.0.1",
-    "openai": "^3.2.1"
+    "openai": "^3.2.1",
+    "tdesign-react": "^1.1.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.36.0",
