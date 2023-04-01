@@ -5,7 +5,7 @@ const md = new MarkdownIt({
   highlight(str: string, lang: string) {
     try {
       return `<pre class="hljs"><code>${
-              hljs.highlight(md.utils.escapeHtml(str), { language: lang, ignoreIllegals: true }).value
+              hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
           }</code></pre>`
     }
     catch (__) {
@@ -14,6 +14,6 @@ const md = new MarkdownIt({
   },
 })
 
-export const md2Html = (str: string) => {
+export const md2Html = (str: string): string => {
   return md.render(str)
 }

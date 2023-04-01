@@ -1,8 +1,8 @@
-import { ipcMain } from 'electron'
-import { Configuration, OpenAIApi } from 'openai'
+import {ipcMain} from 'electron'
+import {Configuration, OpenAIApi} from 'openai'
 import HttpsProxyAgent from 'https-proxy-agent'
 import HttpProxyAgent from 'http-proxy-agent'
-import { createFailMessage, createSuccessMessage } from '../utils/message'
+import {createFailMessage, createSuccessMessage} from '../utils/message'
 
 const httpsAgent = new HttpsProxyAgent('http://127.0.0.1:4780')
 const httpAgent = new HttpProxyAgent('http://127.0.0.1:4780')
@@ -17,7 +17,13 @@ export async function chat(win: Electron.BrowserWindow) {
     try {
       const res = await openai.createChatCompletion({
         model: 'gpt-3.5-turbo',
-        messages: [{ role: 'user', content }],
+        messages: [
+          {
+            role: 'system',
+            content: '麻烦请用 markdown 回复我。',
+          },
+          { role: 'user', content },
+        ],
       }, {
         httpAgent,
         httpsAgent,
