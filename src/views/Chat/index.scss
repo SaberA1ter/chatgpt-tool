@@ -1,24 +1,30 @@
-$headerHeight: 30px;
-$footerHeight: auto;
+$headerHeight: 48px;
+$mainPadding: 10px;
 
-.chat-main {
+.chat-container {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
 
-  .main-header {
+  .chat-header {
     height: $headerHeight;
     line-height: $headerHeight;
   }
 
-  .main-container {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+  .chat-main {
+    padding: 10px;
+    height: calc(100% - $headerHeight - $mainPadding * 2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 
-  .main-footer {
-    height: $footerHeight;
+    .main-container {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        width: 0!important
+      }
+    }
   }
 }
