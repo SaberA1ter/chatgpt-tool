@@ -28,9 +28,15 @@ const MessageLog: FC<MessageProps> = (props) => {
   return (
         <Space className={className}>
             <Card hoverShadow>
-                <div dangerouslySetInnerHTML={{
-                  __html: content,
-                }}></div>
+                {
+                    isMyself
+                      ? content
+                      : (
+                            <div dangerouslySetInnerHTML={{
+                              __html: content,
+                            }}></div>
+                        )
+                }
             </Card>
             <Avatar image={avatar} />
         </Space>
