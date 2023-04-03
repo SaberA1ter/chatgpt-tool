@@ -8,7 +8,7 @@ import { md2Html } from '../utils/markdown'
 const httpsAgent = new HttpsProxyAgent('http://127.0.0.1:4780')
 const httpAgent = new HttpProxyAgent('http://127.0.0.1:4780')
 export async function chat(win: Electron.BrowserWindow) {
-  const apiKey = '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'
+  const apiKey = 'xxxx'
   const configuration = new Configuration({
     apiKey,
   })

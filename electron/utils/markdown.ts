@@ -1,7 +1,9 @@
 import MarkdownIt from 'markdown-it'
+import mila from 'markdown-it-link-attributes'
 import hljs from 'highlight.js'
 
 const md = new MarkdownIt({
+  linkify: true,
   highlight(str: string, lang: string) {
     try {
       return `<pre class="hljs hljs-pre"><code>${
@@ -11,6 +13,13 @@ const md = new MarkdownIt({
     catch (__) {
       return str
     }
+  },
+})
+
+md.use(mila, {
+  attrs: {
+    target: '_blank',
+    rel: 'noopener',
   },
 })
 
