@@ -11,4 +11,5 @@ html, body, #root, .App {
 .hljs-pre {
   border-radius: var(--td-radius-medium);
   padding: var(--td-comp-paddingTB-l) var(--td-comp-paddingLR-xl);
+  margin: var(--td-comp-margin-m) 0;
 }
