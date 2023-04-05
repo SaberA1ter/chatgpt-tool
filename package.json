@@ -1,9 +1,9 @@
 {
-  "name": "chatgpt",
+  "name": "chatgpt-tool",
   "version": "2.1.0",
   "private": true,
-  "description": "Electron Vite React boilerplate.",
-  "author": "草鞋没号 <308487730@qq.com>",
+  "description": "一个 ChatGPT 客户端工具。",
+  "author": "SaberA1ter<zzqchongya@foxmail.com>",
   "license": "MIT",
   "main": "dist-electron/main/index.js",
   "debug": {
