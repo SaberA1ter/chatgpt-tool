@@ -2,6 +2,7 @@ import { release } from 'node:os'
 import { join } from 'node:path'
 import { BrowserWindow, app, ipcMain, shell } from 'electron'
 import { chat } from './chat'
+import { windowAction } from './window'
 
 // The built directory structure
 //
@@ -47,8 +48,9 @@ const indexHtml = join(process.env.DIST, 'index.html')
 
 async function createWindow() {
   win = new BrowserWindow({
-    title: 'Main window',
+    title: 'chatgpt tool',
     icon: join(process.env.PUBLIC, 'favicon.ico'),
+    frame: false,
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
@@ -81,6 +83,7 @@ async function createWindow() {
   })
 
   chat(win)
+  windowAction(win)
 }
 
 app.whenReady().then(createWindow)

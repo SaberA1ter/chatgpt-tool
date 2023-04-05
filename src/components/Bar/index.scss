@@ -1,0 +1,15 @@
+@import "@/style/var";
+.app-bar {
+  height: $barHeight;
+  line-height: $barHeight;
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 0 20px;
+  justify-content: space-between;
+  font-size: var(--td-font-size-body-large);
+  -webkit-app-region: drag;
+
+  .bar-button-groups {
+    -webkit-app-region: no-drag;
+  }
+}
