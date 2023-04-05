@@ -1,3 +1,35 @@
+import type { ChatCompletionRequestMessage } from 'openai'
+
+// 最大上下文数量
+const MAX_MESSAGE = 3
+
+export class Context {
+  private readonly list: ChatCompletionRequestMessage[]
+
+  constructor() {
+    this.list = []
+  }
+
+  public add(userMessage: string, assistantMessage: string) {
+    if (!userMessage || !assistantMessage)
+      return
+    if (this.list.length === MAX_MESSAGE * 2)
+      this.list.splice(0, 2)
+
+    this.list.push({
+      role: 'user',
+      content: userMessage,
+    }, {
+      role: 'assistant',
+      content: assistantMessage,
+    })
+  }
+
+  public get context() {
+    return [...this.list]
+  }
+}
+
 const errorCodeMap: Record<string, string> = {
   401: 'error 401 可能是你的 apiKey 不对劲！',
   403: 'error 403 拒绝访问，哒咩！',
