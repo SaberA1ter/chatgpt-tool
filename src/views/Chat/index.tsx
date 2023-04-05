@@ -45,12 +45,40 @@ export default () => {
     } as const
   }
 
+  const checkNeedScroll = () => {
+    if (messageContainer.current) {
+      const messageItems = messageContainer.current.querySelectorAll('.message-item')
+      const sendRect = messageItems[messageItems.length - 2]?.getBoundingClientRect()
+      if (!sendRect)
+        return true
+      const rect = messageContainer.current.getBoundingClientRect()
+      const containerHeight = rect.bottom - rect.top
+      // 如果发出的消息超出一个屏幕，则不滚动
+      return sendRect.top < containerHeight
+    }
+  }
+
+  const scrollIntoView = () => {
+    if (messageContainer.current) {
+      const items = messageContainer.current.querySelectorAll('.message-item')
+      items[items.length - 1] && items[items.length - 1].scrollIntoView(true)
+    }
+  }
+
+  const scrollToBottom = () => {
+    if (messageContainer.current)
+      messageContainer.current.scrollTop = messageContainer.current.scrollHeight
+  }
+
   useEffect(() => {
     const last = messageList[messageList.length - 1]
     if (last?.type === 'my') {
       send(last.content)
-      if (messageContainer.current)
-        messageContainer.current.scrollTop = messageContainer.current.scrollHeight
+      scrollToBottom()
+    }
+    else if (last?.type === 'their') {
+      if (checkNeedScroll())
+        scrollIntoView()
     }
   }, [messageList])
   return (
